@@ -8,7 +8,7 @@ Install
   2) Turn on the webserver component in your esphome device.
      (How to : https://esphome.io/components/web_server.html)
      
-  3) Go to QA's Variable Tab, put in your ip and port.
+  3) Go to QA's Variable Tab, put in your esphome device's ip and port.
   
   4) Click Load Device and Install Device buttons in order. Then esphome sensor or switch, etc. will be installed as child devices.
   
