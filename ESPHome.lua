@@ -1,6 +1,6 @@
---- Made By Jayson, Update Date : 2020.12.7---
+--- Made By Jayson, Update Date : 2020.12.16---
 
-_app = {name="ESPHome", version="1.0.1"}
+_app = {name="ESPHome", version="1.0.2"}
 
 local url = ""
 local http = net.HTTPClient({timeout=10000})
@@ -13,7 +13,7 @@ local installedDevice = {}
 local ESPHomeType = {
 sensor = {ftype="com.fibaro.multilevelSensor",class="ESPHome_MultilevelSensor"},
 binary_sensor = {ftype="com.fibaro.binarySensor",class="ESPHome_BinarySensor"},
-binary_switch = {ftype="com.fibaro.binarySwitch",class="ESPHome_BinarySwitch"},
+switch = {ftype="com.fibaro.binarySwitch",class="ESPHome_BinarySwitch"},
 light = {ftype="com.fibaro.binarySwitch",class="ESPHome_Light"},
 -- light = {ftype="com.fibaro.colorController",class="ESPHome_Light"},
 fan = {ftype="com.fibaro.binarySwitch",class="ESPHome_Fan"},
