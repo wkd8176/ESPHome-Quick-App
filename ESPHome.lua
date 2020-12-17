@@ -1,6 +1,6 @@
---- Made By Jayson, Update Date : 2020.12.16---
+--- Made By Jayson, Update Date : 2020.12.17---
 
-_app = {name="ESPHome", version="1.0.2"}
+_app = {name="ESPHome", version="1.0.3"}
 
 local url = ""
 local http = net.HTTPClient({timeout=10000})
@@ -167,15 +167,15 @@ class 'ESPHome_BinarySwitch' (ESPHome)
 function ESPHome_BinarySwitch:__init(device)  ESPHome.__init(self, device) end
 
 function ESPHome_BinarySwitch:turnOn()
-    local deviceDomain = domain[self.childNo]
-    local deviceName = id[self.childNo]
+    local deviceDomain = domain[tonumber(self.childNo)]
+    local deviceName = id[tonumber(self.childNo)]
     self.turnOnUrl = url .. "/" .. deviceDomain .. "/" .. deviceName .. "/turn_on"
     post(self.turnOnUrl, "turn_on")
 end
 
 function ESPHome_BinarySwitch:turnOff()
-    local deviceDomain = domain[self.childNo]
-    local deviceName = id[self.childNo]
+    local deviceDomain = domain[tonumber(self.childNo)]
+    local deviceName = id[tonumber(self.childNo)]
     self.turnOffUrl = url .. "/" .. deviceDomain .. "/" .. deviceName .. "/turn_off"
     post(self.turnOffUrl, "turn_off")
 end
