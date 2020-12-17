@@ -141,7 +141,7 @@ end
 class 'ESPHome' (QuickAppChild)
 function ESPHome:__init(device)
     QuickAppChild.__init(self, device)
-    self.childNo = fibaro.getValue(self.id, "userDescription")
+    self.childNo = tonumber(fibaro.getValue(self.id, "userDescription"))
     self.value = fibaro.getValue(self.id, "value")
     self:setValue()
 end
@@ -167,15 +167,15 @@ class 'ESPHome_BinarySwitch' (ESPHome)
 function ESPHome_BinarySwitch:__init(device)  ESPHome.__init(self, device) end
 
 function ESPHome_BinarySwitch:turnOn()
-    local deviceDomain = domain[tonumber(self.childNo)]
-    local deviceName = id[tonumber(self.childNo)]
+    local deviceDomain = domain[self.childNo]
+    local deviceName = id[self.childNo]
     self.turnOnUrl = url .. "/" .. deviceDomain .. "/" .. deviceName .. "/turn_on"
     post(self.turnOnUrl, "turn_on")
 end
 
 function ESPHome_BinarySwitch:turnOff()
-    local deviceDomain = domain[tonumber(self.childNo)]
-    local deviceName = id[tonumber(self.childNo)]
+    local deviceDomain = domain[self.childNo]
+    local deviceName = id[self.childNo]
     self.turnOffUrl = url .. "/" .. deviceDomain .. "/" .. deviceName .. "/turn_off"
     post(self.turnOffUrl, "turn_off")
 end
